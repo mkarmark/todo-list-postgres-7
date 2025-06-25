@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
-import { PrismaClient, Todo } from "@/generated/prisma";
+import { PrismaClient } from "@prisma/client";
+type Todo = ReturnType<PrismaClient['todo']['findMany']>[number];
 
 const prisma = new PrismaClient();
 
